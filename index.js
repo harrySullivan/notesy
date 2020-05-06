@@ -45,7 +45,7 @@ window.onkeyup = (e) => {
         break
 
       case 66:
-        spliceText = "\\[7mm]"
+        spliceText = "\\\[7mm]"
         cursorOffset = 6
         break
     }
