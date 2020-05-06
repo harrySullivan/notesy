@@ -29,10 +29,11 @@ window.onkeyup = (e) => {
         break
       case 78:
         spliceText = "\n\\newline\n"
+        cursorOffset = 10
         break
       case 76:
-        spliceText = "\n\\cdot\\space\\text{}"
-        cursorOffset = 18
+        spliceText = "\n\\\\\\cdot\\space\\text{}"
+        cursorOffset = 20
         break
       case 84:
         spliceText = "\\text{}"
