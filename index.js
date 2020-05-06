@@ -69,7 +69,7 @@ var openFile = (e) => {
 
 var deleteFile = () => {
   const file = openSelect.value
-  localStorage.clear(file);
+  localStorage.removeItem(file);
   location.reload()
 }
 
