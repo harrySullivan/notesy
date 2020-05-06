@@ -9,7 +9,8 @@ titleInput.oninput = (e) => {
 }
 
 mainInput.oninput = (e) => {
-  katex.render(e.target.value, output, {
+  const addedNewlines = e.target.value.split("\n").join("\\\\\n")
+  katex.render(addedNewlines, output, {
     throwOnError: false
   });
 
@@ -45,8 +46,8 @@ window.onkeyup = (e) => {
         break
 
       case 66:
-        spliceText = "\\\[7mm]"
-        cursorOffset = 6
+        spliceText = "\\\\[7mm]\n"
+        cursorOffset = 8
         break
     }
 
