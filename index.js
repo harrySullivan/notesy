@@ -53,7 +53,8 @@ var save = () => {
 }
 
 var openFile = (e) => {
-  const latex = localStorage.getItem(e.target.value)
+  const key = e.target.value
+  const latex = localStorage.getItem(key)
   mainInput.value = latex;
 
   katex.render(mainInput.value, output, {
@@ -61,6 +62,9 @@ var openFile = (e) => {
   });
 
   autoExpand(mainInput)
+
+  titleInput.value = key
+  titleOutput.innerText = key
 }
 
 Object.keys(localStorage).map(key => {
