@@ -19,23 +19,28 @@ mainInput.oninput = (e) => {
 window.onkeyup = (e) => {
   e.preventDefault()
   var spliceText = "";
+  var cursorOffset = 0;
   if (e.altKey) {
 
     switch (e.keyCode) {
       case 73:
         spliceText = "\\int_{}^{}"
+        cursorOffset = 6
         break
       case 78:
         spliceText = "\n\\newline\n"
         break
       case 76:
         spliceText = "\n\\cdot\\space\\text{}"
+        cursorOffset = 18
         break
       case 84:
         spliceText = "\\text{}"
+        cursorOffset = 6
         break
       case 79:
         spliceText = "\\frac{}{}"
+        cursorOffset = 6
         break
     }
 
@@ -44,6 +49,8 @@ window.onkeyup = (e) => {
 
     const newText = mainText.splice(cursorPosition, 0, spliceText)
     mainInput.value = newText
+    mainInput.selectionStart = cursorPosition + cursorOffset
+    mainInput.selectionEnd = cursorPosition + cursorOffset
   }
 
 }
