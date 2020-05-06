@@ -1,8 +1,8 @@
 const output = document.getElementById("output")
 const titleInput = document.getElementById("title-input")
 const titleOutput = document.getElementById("title-output")
-
 const mainInput = document.getElementById("main-input")
+const openSelect = document.getElementById("open-select")
 
 titleInput.oninput = (e) => {
   titleOutput.innerText = e.target.value
@@ -67,8 +67,14 @@ var openFile = (e) => {
   titleOutput.innerText = key
 }
 
+var deleteFile = () => {
+  const file = openSelect.value
+  localStorage.clear(file);
+  location.reload()
+}
+
 Object.keys(localStorage).map(key => {
-  document.getElementById("open-select").innerHTML += `
+  openSelect.innerHTML += `
       <option value="${key}">${key}</option>
     `
 })
