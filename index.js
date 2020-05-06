@@ -43,6 +43,11 @@ window.onkeyup = (e) => {
         spliceText = "\\frac{}{}"
         cursorOffset = 6
         break
+
+      case 66:
+        spliceText = "\\[7mm]"
+        cursorOffset = 6
+        break
     }
 
     const cursorPosition = mainInput.selectionStart;
