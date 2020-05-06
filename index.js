@@ -46,12 +46,12 @@ window.onkeyup = (e) => {
 
     const cursorPosition = mainInput.selectionStart;
     const mainText = mainInput.value;
-    autoExpand(mainInput)
 
     const newText = mainText.splice(cursorPosition, 0, spliceText)
     mainInput.value = newText
     mainInput.selectionStart = cursorPosition + cursorOffset
     mainInput.selectionEnd = cursorPosition + cursorOffset
+    autoExpand(mainInput)
   }
 
 }
