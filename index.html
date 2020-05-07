@@ -33,24 +33,20 @@
 
 </head>
 
-<body style="width: 98%; display: flex; flex-direction: row; overflow: hidden;">
-  <div style="height: 100%;">
-    <input class="no-print" type="text" id="title-input" placeholder="Title">
-    <button class="no-print" style="display: inline;" onclick="save()">save</button>
-    <select class="no-print" style="display: inline;" id="open-select" onchange="openFile(event)">
-      <option value="" selected disabled hidden>open</option>
-    </select>
-    <button class="no-print" style="display: inline;" onclick="deleteFile()">delete</button>
+<body style="width: 98%">
 
-    <textarea class="no-print" rows=20 id="main-input" style="width: 96%; resize: vertical;"
-      placeholder="Main content"></textarea>
-    <br>
+  <input class="no-print" type="text" id="title-input" placeholder="Title">
+  <button class="no-print" style="display: inline;" onclick="save()">save</button>
+  <select class="no-print" style="display: inline;" id="open-select" onchange="openFile(event)">
+    <option value="" selected disabled hidden>open</option>
+  </select>
+  <button class="no-print" style="display: inline;" onclick="deleteFile()">delete</button>
 
-  </div>
-  <div style="overflow-y: scroll; height: 95vh; width: max-content;">
-    <h1 id="title-output" style="text-align: center;"></h1>
-    <span id="output"></span>
-  </div>
+  <textarea class="no-print" rows=20 id="main-input" style="width: 96%; resize: vertical;"
+    placeholder="Main content"></textarea>
+  <br>
+  <h1 id="title-output" style="text-align: center;"></h1>
+  <span id="output"></span>
 
 </body>
 
