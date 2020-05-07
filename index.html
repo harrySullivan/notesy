@@ -35,19 +35,23 @@
 
 <body style="width: 98%">
 
-  <input class="no-print" type="text" id="title-input" placeholder="Title">
-  <button class="no-print" style="display: inline;" onclick="save()">save</button>
-  <select class="no-print" style="display: inline;" id="open-select" onchange="openFile(event)">
-    <option value="" selected disabled hidden>open</option>
-  </select>
-  <button class="no-print" style="display: inline;" onclick="deleteFile()">delete</button>
+  <div style="position: sticky; top:0;  z-index: 4;">
+    <input class="no-print" type="text" id="title-input" placeholder="Title">
+    <button class="no-print" style="display: inline;" onclick="save()">save</button>
+    <select class="no-print" style="display: inline;" id="open-select" onchange="openFile(event)">
+      <option value="" selected disabled hidden>open</option>
+    </select>
+    <button class="no-print" style="display: inline;" onclick="deleteFile()">delete</button>
 
-  <textarea class="no-print" rows=20 id="main-input" style="width: 96%; resize: vertical;"
-    placeholder="Main content"></textarea>
+    <textarea class="no-print" rows=20 id="main-input"
+      style="width: 96%; resize: none; background-color: #f5f5f5; border: 0.1rem solid black;"
+      placeholder="Main content"></textarea>
+  </div>
   <br>
-  <h1 id="title-output" style="text-align: center;"></h1>
-  <span id="output"></span>
-
+  <div style="z-index: 1">
+    <h1 id="title-output" style="text-align: center;"></h1>
+    <span id="output"></span>
+  </div>
 </body>
 
 <script src="./index.js"></script>

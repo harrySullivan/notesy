@@ -110,6 +110,7 @@ function insertAtCursor(input, textToInsert) {
 }
 
 var autoExpand = function (field) {
+  window.scrollTo(0, document.body.scrollHeight);
 
   // // Reset field height
   // field.style.height = 'inherit';
