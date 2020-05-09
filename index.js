@@ -9,12 +9,11 @@ titleInput.oninput = (e) => {
 }
 
 mainInput.oninput = (e) => {
-  const addedNewlines = e.target.value.split("\n").join("\\\\\n")
-  katex.render(addedNewlines, output, {
-    throwOnError: false
-  });
+  if (e.keyCode === 13) {
+    const addedNewlines = e.target.value.split("\n").join("\\\\\n")
+    reRender(addedNewlines)
+  }
 
-  autoExpand(e.target)
 }
 
 window.onkeyup = (e) => {
@@ -72,11 +71,7 @@ var openFile = (e) => {
   const latex = localStorage.getItem(key)
   mainInput.value = latex;
 
-  katex.render(mainInput.value, output, {
-    throwOnError: false
-  });
-
-  autoExpand(mainInput)
+  reRender(latex)
 
   titleInput.value = key
   titleOutput.innerText = key
@@ -93,6 +88,14 @@ Object.keys(localStorage).map(key => {
       <option value="${key}">${key}</option>
     `
 })
+
+var reRender = (text) => {
+  katex.render(text, output, {
+    throwOnError: false
+  });
+
+  autoExpand(mainInput)
+}
 
 function insertAtCursor(input, textToInsert) {
   // get current text of the input
