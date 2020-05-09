@@ -8,8 +8,9 @@ titleInput.oninput = (e) => {
   titleOutput.innerText = e.target.value
 }
 
-mainInput.oninput = (e) => {
+mainInput.onkeyup = (e) => {
   if (e.keyCode === 13) {
+    console.log('he')
     const addedNewlines = e.target.value.split("\n").join("\\\\\n")
     reRender(addedNewlines)
   }
